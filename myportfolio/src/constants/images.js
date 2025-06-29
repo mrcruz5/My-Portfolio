@@ -37,7 +37,7 @@ import spotify from "../assets/spotify.png";
 import microcontroller from "../assets/Microcontroller.png";
 import cisco from "../assets/cisco.png";
 
-export default {
+const images = {
   email,
   mobile,
   api,
@@ -74,4 +74,6 @@ export default {
   microcontroller,
   cisco,
 };
- 
+
+export default images;
+
