@@ -6,26 +6,44 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Work.scss";
 
 // ✅ Import local images
-import dataVisImg from "../../assets/data-vis.png";
-import cpeImg from "../../assets/cpe-project.png";
+import Soft1 from "../../assets/Soft1.mp4"
+import Soft2 from "../../assets/Soft2.png";
+import cpe1 from "../../assets/cpe1.png";
+import data1 from "../../assets/data1.png";
 
 // ✅ Static local works data
 const localWorks = [
   {
-    title: "Data Visualization",
-    description: "A project using D3.js and Python for interactive charts.",
-    imgUrl: dataVisImg,
-    projectLink: "https://null/data-viz",
-    codeLink: "https://github.com/mrcruz5/data-viz",
+    title: "Price Prediction Accuracy Visualization",
+    description: "Scatter plot of actual vs. predicted house prices with a reference line, evaluating the accuracy of a regression model.",
+    imgUrl: data1,
+    projectLink: "https://docs.google.com/document/d/1NR5fiQ2kZcFx5ArfF2jV6HWFoQ1GsGls2_2xvgbtYXs/edit?usp=sharing",
+    codeLink: "https://github.com/mrcruz5",
     tags: ["Data Visualization"],
   },
   {
-    title: "Simple CPE Project",
-    description: "A computer engineering hardware-software integration project.",
-    imgUrl: cpeImg,
-    projectLink: "https://null/cpe",
-    codeLink: "https://github.com/mrcruz5/cpe-project",
+    title: "8-bit Computer CLOCK/PROGRAM COUNTER",
+    description: "A functional clock and program counter module for an 8-bit computer",
+    imgUrl: cpe1,
+    projectLink: "https://docs.google.com/document/d/180VdzQNp9j8tSKF3gZeVObIeskxCz79w0d4pgIf8fTY/edit?usp=sharing",
+    codeLink: "https://github.com/mrcruz5",
     tags: ["CPE"],
+  },
+  {
+    title: "WebPrints",
+    description: "WebPrints is an online platform for easy, high-quality document and photo printing delivered to your door.",
+    videoUrl: Soft1,
+    projectLink: "https://null/cpe",
+    codeLink: "https://github.com/CGPixel/FlaskPSD",
+    tags: ["Software Design"],
+  },
+  {
+    title: "WebSched",
+    description: "WebSched is a scheduling web app that helps users organize and access their weekly activities with ease.",
+    imgUrl: Soft2,
+    projectLink: "https://websched.pages.dev/",
+    codeLink: "https://github.com/CPE408-CPE43S2-EoS/WebSched",
+    tags: ["Software Design"],
   },
 ];
 
@@ -63,7 +81,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["Data Visualization", "CPE", "All"].map((item, index) => (
+        {[ "All", "Software Design","Data Visualization", "CPE",].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -83,8 +101,19 @@ const Work = () => {
       >
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
-            <div className="app__work-img app__flex">
-              <img src={work.imgUrl} alt={work.name} />
+              <div className="app__work-img app__flex">
+                {work.videoUrl ? (
+                  <video
+                    src={work.videoUrl}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ width: "100%", borderRadius: "10px" }}
+                  />
+                ) : (
+                  <img src={work.imgUrl} alt={work.title} />
+                )}
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
