@@ -10,9 +10,18 @@ import Soft1 from "../../assets/Soft1.mp4"
 import Soft2 from "../../assets/Soft2.png";
 import cpe1 from "../../assets/cpe1.png";
 import data1 from "../../assets/data1.png";
+import cv1 from "../../assets/cv1.png";
 
 // ✅ Static local works data
 const localWorks = [
+  {
+    title: "My Curriculum Vitae",
+    description: "Computer Engineering student with hands-on experience in web development, data analysis, and digital systems design.",
+    imgUrl: cv1,
+    projectLink: "https://drive.google.com/uc?export=download&id=1TMArhxGC_BuDzFVXc14ju9IqKPCWFTAY",
+    codeLink: "https://github.com/mrcruz5",
+    tags: ["CV"],
+  },
   {
     title: "Price Prediction Accuracy Visualization",
     description: "Scatter plot of actual vs. predicted house prices with a reference line, evaluating the accuracy of a regression model.",
@@ -33,7 +42,7 @@ const localWorks = [
     title: "WebPrints",
     description: "WebPrints is an online platform for easy, high-quality document and photo printing delivered to your door.",
     videoUrl: Soft1,
-    projectLink: "https://null/cpe",
+    projectLink: "https://heyzine.com/flip-book/2a9deee8b7.html",
     codeLink: "https://github.com/CGPixel/FlaskPSD",
     tags: ["Software Design"],
   },
@@ -81,7 +90,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {[ "All", "Software Design","Data Visualization", "CPE",].map((item, index) => (
+        {[ "All","CV", "Software Design","Data Visualization", "CPE",].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
